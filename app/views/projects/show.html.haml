@@ -1,0 +1,40 @@
+- content_for :styles do
+  = stylesheet_link_tag 'project'
+
+- content_for :titlename do
+  PROJECT:
+  = @project.name
+
+- content_for :center_window do
+  .cleft-column
+    .stats
+      %h3 Project Info
+      #{@project.created_at}
+    - if current_user.admin?
+      .destroy-button
+        = link_to 'Delete PROJECT', project_path(@project),
+                  data: { turbo_method: :delete,
+                          turbo_confirm: 'Permanently delete this project and all of its associated resources? (not recoverable)' }
+  .cright-column
+    Description:
+    %br
+    %br
+    .description-text-area
+      = @project.description
+
+- content_for :left_window do
+  %h3 Deliveries
+  %ul
+    %li Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+-# - content_for :bb_a do
+-#   = link_to 'New PROJECT', new_project_path
+
+- content_for :bb_b do
+  = link_to 'BACK to Main', home_path
+
+- content_for :bb_c do
+  = link_to 'EDIT Project', edit_project_path
+
+- content_for :bb_d do
+  - if user_signed_in?
+    = link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete

@@ -1,0 +1,23 @@
+- content_for :styles do
+  = stylesheet_link_tag 'project'
+
+- content_for :titlename do
+  PROJECT: #{@first.name}
+
+- content_for :center_window do
+  %h3
+    Project Description
+  = @first.description
+
+- content_for :left_window do
+  %ul.projects
+  - @projects.each do |project|
+    %li=  link_to project.name, project_path(project)
+  %br
+  %br
+- content_for :bb_b do
+  = link_to 'New Project', new_project_path
+
+- content_for :bb_d do
+  - if user_signed_in?
+    = link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete

@@ -1,0 +1,75 @@
+.left-column {
+	visibility: visible;
+}
+
+.bottom-nav {
+	visibility: visible;
+}
+
+body {
+	list-style-type: cjk-ideographic;
+}
+
+.description-label {
+	vertical-align: top;
+	margin-top: 5px;
+}
+
+.description-text-area {
+	background-color: black;
+	color: antiquewhite;
+	white-space: pre-wrap;
+	overflow: scroll;
+	scrollbar-color: green black;
+	max-height: 300px;
+}
+
+.cright-column {
+	margin-left: 5px;
+}
+
+.cleft-column {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 234px;
+	height: 100%;
+	box-shadow: 1px 0 0 0 #ff6161;
+}
+
+.destroy-button {
+	color: #ff6161;
+	outline: 3px double #ff6161;
+	text-align: center;
+	font-size: larger;
+	align-self: end;
+	width: 230px;
+	margin-right: 7px;
+}
+
+.destroy-button a {
+	color: #ff6161;
+	transition: background-color 0.3s;
+}
+
+.destroy-button a:hover {
+	color: black;
+	background-color: red;
+}
+
+#bb_c.bottom_button {
+	background-color: black;
+}
+
+bottom_button#bb_c:hover {
+	background-color: black;
+	color: black;
+}
+
+.stats {
+	height: 100%;
+}
+
+li {
+	color: white;
+}

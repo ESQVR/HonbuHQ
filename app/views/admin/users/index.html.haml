@@ -1,0 +1,23 @@
+- content_for :titlename do
+  << User Account List >>
+- content_for :styles do
+  = stylesheet_link_tag 'admin_users'
+
+- content_for :center_window do
+  .user-list-container
+    %table
+      %thead
+        %tr
+          %th Email
+          %th Role
+          <!-- Add other user attributes you want to display -->
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td= link_to user.email, admin_user_path(user)
+            %td= user.role
+            <!-- Add other user attributes you want to display -->
+
+
+- content_for :bb_a do
+  = link_to 'BACK to Main', home_path

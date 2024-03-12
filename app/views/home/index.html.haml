@@ -1,0 +1,40 @@
+- content_for :styles do
+  = stylesheet_link_tag 'home'
+
+- content_for :center_window do
+  %h2 HELLO #{current_user.first_name}
+  %p.tut-text
+    This is your #{current_user.role} dashboard.
+    %ul
+      %li You can click on "Projects" in the lefthand window to view / modify / delete them.
+      %li You can edit the details of your account using the "EDIT User Profile" button below this window.
+      %li Log out using the link below as well.
+      %br
+      - if current_user.admin?
+        You have ADMIN access which also allows:
+        %li Viewing a current list of users, and modifying thier permissions/role.
+
+- content_for :left_window do
+  .left-window-title
+    %h2 PROJECTS
+  %ul.projects
+  - @projects.each do |project|
+    %li=  link_to project.name, project_path(project)
+
+- content_for :titlename do
+  << HQ MAIN >>
+
+- content_for :bb_a do
+  = link_to 'New PROJECT', new_project_path
+
+- content_for :bb_b do
+  - if current_user.admin?
+    = link_to 'VIEW Users', admin_users_path
+
+- content_for :bb_c do
+  - if user_signed_in?
+    = link_to "EDIT User Profile", edit_user_registration_path
+
+- content_for :bb_d do
+  - if user_signed_in?
+    = link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete

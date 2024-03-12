@@ -1,0 +1,35 @@
+- content_for :styles do
+  = stylesheet_link_tag 'project'
+
+- content_for :titlename do
+  << CREATE PROJECT >>
+
+- content_for :left_window do
+  %ul.projects
+  - @projects.each do |project|
+    %li=  link_to project.name, project_path(project)
+  %br
+  %br
+
+- content_for :center_window do
+  = form_with model: @project do |form|
+    Project
+    = form.label :name
+    = form.text_field :name
+    - @project.errors.full_messages_for(:name).each do |message|
+      %div= message
+    %br
+    %br
+    = form.label :description, class: 'description-label'
+    = form.text_area :description, rows: 15, cols: 80, class: 'description-text-area'
+    - @project.errors.full_messages_for(:description).each do |message|
+      %div= message
+    %br
+    = form.submit
+
+
+- content_for :bb_a do
+  = link_to 'BACK to Main', home_path
+- content_for :bb_d do
+  - if user_signed_in?
+    = link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete

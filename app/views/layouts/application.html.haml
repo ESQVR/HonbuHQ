@@ -1,0 +1,66 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title 本部 HQ
+    %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_importmap_tags
+
+  %body
+    = yield :styles
+    .wrapper
+      / Navigation above main content
+      %h1 本部 HonbuHQ
+      .topbar
+        .top_nav_spacer
+        %nav.top-nav
+          .admin_display
+            - if user_signed_in?
+              %p(style="#{current_user.admin? ? 'visibility: visible;' : 'visibility: hidden;'}")
+                #{current_user.role}
+          .title_display
+            - if user_signed_in?
+              = yield :titlename
+          .user_display
+            - if user_signed_in?
+              %p
+                User:
+                #{current_user.first_name} #{current_user.last_name}
+        .top_nav_spacer
+      / Main content area
+      .main-content
+        / Left column (20%)
+        #left-window.left-column
+          = yield :left_window
+        / Center column (60%)
+        #main-window.center-column
+          = yield :center_window
+        / Right column (20%)
+        #right-window.right-column
+          = yield :right_window
+      / Navigation below main content
+      %nav.bottom-nav
+        #l_button.LR_buttons
+          #bb_left
+          = yield :bb_left
+        .center-segments
+          .bottom_button
+            #bb_a
+            = yield :bb_a
+          .bottom_button
+            #bb_b
+            = yield :bb_b
+          .bottom_button
+            #bb_c
+            = yield :bb_c
+          .bottom_button
+            #bb_d
+            = yield :bb_d
+        #r_button.LR_buttons
+          #bb_right
+          = yield :bb_right
+  %footer
+

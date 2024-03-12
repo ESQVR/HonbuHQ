@@ -1,0 +1,421 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #41FF00;
+  font-size: smaller;
+  min-height: 100vh;
+  filter: brightness(1.2) blur(0.55px);
+  text-shadow: rgba(65, 255, 119, .8) 0px 0px 20px;
+  scrollbar-color: green black;
+}
+
+/* unvisited link */
+a:link {
+  color: #41FF00;
+  text-decoration: none;
+  font-size: larger;
+}
+
+/* visited link */
+a:visited {
+  color: #41FF00;
+  text-decoration: none;
+  font-size: larger;
+}
+
+/* mouse over link */
+a:hover {
+  color: black;
+  background-color: #41FF00;
+  font-size: larger;
+}
+
+/* selected link */
+a:active {
+  color: #ff6161;
+}
+
+.wrapper {
+  width: 90%;
+  min-width: 1150px;
+  max-width: 1500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* outline: 2px solid red; */
+}
+
+.top-nav {
+  text-align: center;
+  width: 915px;
+  min-width: 680px;
+  height: 50px;
+  /* outline: 2px dotted darkgray; */
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #41FF00;
+  margin-left: 10px;
+  margin-right: 10px;
+  visibility: visible;
+  padding-bottom: 5px;
+}
+
+.admin_display {
+  color: #ff6161;
+  text-shadow: rgba(255, 69, 69, 0.8) 0px 0px 20px;
+  font-size: 25px;
+  font-weight: 300;
+  /* outline: 2px dotted darkgray; */
+  max-height: 50px;
+  width: 20%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.title_display {
+  font-size: 25px;
+  font-weight: 300;
+  /* outline: 2px dotted darkgray; */
+  width: 60%;
+  max-height: 50px;
+}
+
+.user_display {
+  font-size: 20px;
+  font-weight: 300;
+  /* outline: 2px dotted darkgray; */
+  width: 20%;
+  max-height: 50px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.bottom-nav {
+  text-align: center;
+  width: 98%;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  color: #41FF00;
+  margin-top: 10px;
+}
+
+.bottom_button {
+  min-width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: #41FF00;
+}
+
+.bottom_button:hover {
+  background-color: #41FF00;
+  color: black;
+}
+
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  /* width:auto; */
+  min-height: 460px;
+  /* outline: 2px solid green; */
+  width: 100%;
+}
+
+.left-column,
+.right-column {
+  min-width: 100px;
+  width: 234px;
+  outline: 1px solid #41FF00;
+  color: #41FF00;
+  padding: 5px;
+  visibility: hidden;
+}
+
+.center-column {
+  width: 915px;
+  min-width: 700px;
+  outline: 2px solid #ff6161;
+  padding: 10px;
+  color: rgb(4, 255, 0);
+  animation: flicker 3s infinite alternate;
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.LR_buttons {
+  width: 234px;
+  min-width: 100px;
+  /* outline: 2px dotted pink; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+  color: #41FF00;
+}
+
+#l_button {
+  visibility: hidden;
+}
+
+#r_button {
+  visibility: hidden;
+}
+
+.center-segments {
+  width: 915px;
+  min-width: 700px;
+  display: flex;
+  justify-content: space-between;
+  /* outline: 2px solid purple; */
+}
+
+.topbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* outline: 2px solid darkcyan; */
+  width: 100%;
+}
+
+.top_nav_spacer {
+  width: 234px;
+  min-width: 100px;
+  /* outline: 2px dotted rgb(52, 52, 52); */
+}
+
+@keyframes flicker {
+  0% {
+    border-color: #ff6161;
+    -webkit-box-shadow: 0px 0px 40px 0px #ff212160;
+    -moz-box-shadow: 0px 0px 40px 0px #ff212160;
+    box-shadow: 0px 0px 40px 0px #ff212160;
+  }
+
+  100% {
+    border-color: #612626e9;
+    -webkit-box-shadow: 0px 0px 30px 0px #ff616130;
+    -moz-box-shadow: 0px 0px 30px 0px #ff616130;
+    box-shadow: 0px 0px 30px 0px #ff616130;
+  }
+}
+
+
+input {
+  background-color: #000000;
+  /* Set your desired background color */
+  color: #dc143c;
+  border: 1px solid #41ff77;
+}
+
+input:-webkit-autofill {
+  background-color: #000000;
+  /* Set your desired background color */
+  color: #dc143c;
+}
+
+input:focus {
+  border: 1px solid #41ff77;
+  outline: none;
+  /* This removes the default outline that browsers apply */
+  box-shadow: 0 0 5px #41ff77;
+  /* You can customize the box-shadow to give a visual indication */
+}
+
+.signup-window{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* THIS IS EXPERIMENTAL CRT FILTERING - https://aleclownes.com/2017/02/01/crt-display.html
+@keyframes CRTflicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
+  }
+}
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: CRTflicker 0.15s infinite;
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+.crt {
+  animation: textShadow 1.6s infinite;
+} */

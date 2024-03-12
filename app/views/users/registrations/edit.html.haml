@@ -1,0 +1,62 @@
+- content_for :styles do
+  = stylesheet_link_tag 'registrations'
+
+- content_for :center_window do
+  %div.signup-window
+    %h2
+      Edit #{resource_name.to_s.humanize}
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+      = render "users/shared/error_messages", resource: resource
+      %div.fields-container
+        %div.left-reg-column
+          .field
+            = f.label :first_name
+            %br/
+            = f.text_field :first_name, autofocus: true
+          .field
+            = f.label :last_name
+            %br/
+            = f.text_field :last_name
+          .field
+            = f.label :email
+            %br/
+            = f.email_field :email, autofocus: true, autocomplete: "email"
+          - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+            %div
+              Currently waiting confirmation for: #{resource.unconfirmed_email}
+        %div.right-reg-column
+          .field
+            %b NEW
+            = f.label :password, 'Password', style: 'font-weight: bold;'
+            %br
+            %i Leave these blank except when changing password
+            %br/
+            = f.password_field :password, autocomplete: "new-password"
+          %br
+          .field
+            %i NEW
+            = f.label :password_confirmation
+            %br/
+            = f.password_field :password_confirmation, autocomplete: "new-password"
+      %br
+      %br
+      .field
+        = f.label :current_password
+        %br
+        %i You must enter current password to save changes
+        %br/
+        = f.password_field :current_password, autocomplete: "current-password"
+      .actions
+        = f.submit "Update"
+    %br
+    %br
+    %div.danger-text
+      WARNING: THIS IS NOT REVERSIBLE #{button_to "DELETE USER account", registration_path(resource_name), data: { confirm: "Confirm: PERMANENTLY Delete Account?", turbo_confirm: "Confirm:\nPERMANENTLY Delete Account?\nThis action is not reversible!" }, method: :delete, class: "cancel-account-btn"}
+
+- content_for :bb_a do
+  = link_to 'BACK to Main', home_path
+
+- content_for :bb_d do
+  - if user_signed_in?
+    = link_to 'Log Out', destroy_user_session_path, 'data-turbo-method': :delete
+

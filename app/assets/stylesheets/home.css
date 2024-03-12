@@ -1,0 +1,24 @@
+.left-column {
+	visibility: visible;
+}
+
+.bottom-nav {
+	visibility: visible;
+  }
+
+.bottom_button:hover a{
+	color: black;
+}
+
+.left-window-title {
+	text-align: center;
+}
+
+.center-column {
+	flex-direction: column;
+}
+
+.tut-text {
+	color: antiquewhite;
+	white-space: pre-wrap;
+}

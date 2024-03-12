@@ -1,0 +1,36 @@
+.fields-container {
+	display: flex;
+	justify-content: space-between;
+  }
+
+.left-reg-column, .right-reg-column {
+	flex:  1;
+	padding:  10px;
+}
+
+.danger-text{
+	color: red;
+	text-shadow: none;
+	display: flex;
+	justify-content: end;
+	flex-direction: column;
+	align-items: center;
+}
+
+.cancel-account-btn {
+	background-color: #000000; /* Background color */
+    color: #ffffff; /* Text color */
+    border: 3px double red; /* Removes border */
+    /* padding:  15px  50px; */
+    text-align: center; /* Text alignment */
+    text-transform: uppercase; /* Text transformation */
+    font-size:  15px; /* Font size */
+    font-weight:  600; /* Font weight */
+    cursor: pointer; /* Cursor style on hover */
+    margin:  0 auto; /* Center alignment */
+}
+.cancel-account-btn:hover {
+    background-color: red; /* Changes background color on hover */
+    transition: all  0.5s ease-in-out; /* Smooth transition */
+	color: black;
+}

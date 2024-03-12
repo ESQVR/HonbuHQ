@@ -1,0 +1,13 @@
+- content_for :styles do
+  = stylesheet_link_tag 'entry_style'
+
+- content_for :center_window do
+  %body
+    .splash
+      .ascii-art
+        = @honbu_ascii.html_safe
+        %br
+        %br
+      .login-link
+        = link_to 'Access Headquarters', home_path
+%footer
